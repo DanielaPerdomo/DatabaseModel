@@ -19,12 +19,6 @@ class User(Base):
     #Relacion con la Tabla Favorites
     id_favorites = Column(ForeignKey("favorites.id"))
     favorites = relationship( "Favorites", back_populates = "user")
-    #Relacion con la Tabla character
-    id_character = Column(ForeignKey("characters.id"))
-    character = relationship("Characters", back_populates = "user")
-    #Relacion con la Tabla Planets
-    id_planets = Column(ForeignKey("planets.id"))
-    planets = relationship( "Planets", back_populates = "user")
 
 class Characters(Base):
     __tablename__ = 'characters'
